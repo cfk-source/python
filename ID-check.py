@@ -15,9 +15,7 @@ sex_id = id_input[0]
 by_id = id_input[1:3]            # YY
 bm_id = id_input[3:5]            # MM
 bd_id = id_input[5:7]            # DD
-birth_place_id = id_input[7:11]
-birth_place_int = int(id_input)
-
+b_place = int(id_input[7:10])
 
 #sex and year extraction
 
@@ -41,37 +39,37 @@ elif sex_id == '6':
     by = '20'
 
 # birth place check
-if 1 >= birth_place_int <= 10:
-    b_place = 'Kuressaare Haigla'
-elif 11 >= birth_place_int <= 19:
-    b_place = 'Tartu Ülikooli Naistekliinik, Tartumaa, Tartu'
-elif 21 >= birth_place_int <= 220:
-    b_place = 'Ida-Tallinna Keskhaigla, Pelgulinna sünnitusmaja, Hiiumaa, Keila, Rapla Haigla, Loksa Haigla'
-elif 221 >= birth_place_int <= 270:
-    b_place = 'Ida-Viru Keskhaigla (Kohtla-Järve, endine Jõhvi)'
-elif 271 >= birth_place_int <= 370:
-    b_place = 'Maarjamõisa Kliinikum (Tartu), Jõgeva Haigla'
-elif 371 >= birth_place_int <= 420:
-    b_place = 'Narva Haigla'
-elif 421 >= birth_place_int <= 470:
-    b_place = 'Pärnu Haigla'
-elif 471 >= birth_place_int <= 490:
-    b_place = 'Pelgulinna Sünnitusmaja (Tallinn), Haapsalu Haigla'
-elif 491 >= birth_place_int <= 520:
-    b_place = 'Järvamaa Haigla (Paide)'
-elif 521 >= birth_place_int <= 570:
-    b_place = 'Rakvere, Tapa Haigla'
-elif 571 >= birth_place_int <= 600:
-    b_place = 'Valga Haigla'
-elif 601 >= birth_place_int <= 650:
-    b_place = 'Viljandi Haigla'
-elif 651 >= birth_place_int <= 700:
-    b_place = 'Lõuna-Eesti Haigla (Võru), Põlva Haigla'
+if 0 <= b_place <= 10:
+    print("Te olite sündinud Kuressaare Haiglas")
+elif 11 <= b_place <= 19:
+    print("Te olite sündinud Kuressaare Tartu Ülikooli Naistekliinikus, Tartumaa, Tartu")
+elif 21 <= b_place <= 220:
+    print("Te olite sündinud Ida-Tallinna Keskhaiglas või Pelgulinna sünnitusmajas või Hiiumaal või Keilas või Rapla haiglas või Loksa haiglas")
+elif 221 <= b_place <= 270:
+    print("Te olite sündinud Ida-Viru Keskhaiglas (Kohtla-Järve, endine Jõhvi)")
+elif 271 <= b_place <= 370:
+    print("Te olite sündinud Maarjamõisa Kliinikumis (Tartu) või Jõgeva Haiglas")
+elif 371 <= b_place <= 420:
+    print("Te olite sündinud Narva Haiglas")
+elif 421 <= b_place <= 470:
+    print("Te olite sündinud Pärnu Haiglas")
+elif 471 <= b_place <= 490:
+    print("Te olite sündinud Pelgulinna Sünnitusmajas (Tallinn) või Haapsalu haiglas")
+elif 491 <= b_place <= 520:
+    print("Te olite sündinud Järvamaa Haiglas (Paide)")
+elif 521 <= b_place <= 570:
+    print("Te olite sündinud Rakveres või Tapa haiglas")
+elif 571 <= b_place <= 600:
+    print("Te olite sündinud Valga Haiglas")
+elif 601 <= b_place <= 650:
+    print("Te olite sündinud Viljandi Haiglas")
+elif 651 <= b_place <= 700:
+    print("Te olite sündinud Lõuna-Eesti Haiglas (Võru) või Põlva Haiglas")
 
 
 
 #Print results of code analysis
 
-print('Sinu isikukood on: ' + str(id_int))
-print('Te olete sündinud: ' + by + by_id + '.' + bm_id + '.' + bd_id + b_place)
+print('Sinu isikukood on: ', str(id_int))
+print('Te olete sündinud: ' + by + by_id + '.' + bm_id + '.' + bd_id )
 print('Sugu ' + sex)
