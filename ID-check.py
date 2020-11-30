@@ -12,10 +12,11 @@ while True:
         print('Palun sisetage ainult nubrid.')
 
 sex_id = id_input[0]
-by_id = id_input[1:3]            # YY
-bm_id = id_input[3:5]            # MM
-bd_id = id_input[5:7]            # DD
-b_place = int(id_input[7:10])
+birth_year = id_input[1:3]              # YY
+birth_month = id_input[3:5]             # MM
+birth_day = id_input[5:7]               # DD
+birth_place = int(id_input[7:10])
+
 
 #sex and year extraction
 
@@ -39,37 +40,36 @@ elif sex_id == '6':
     by = '20'
 
 # birth place check
-if 0 <= b_place <= 10:
+if 0 <= birth_place <= 10:
     print("Te olite sündinud Kuressaare Haiglas")
-elif 11 <= b_place <= 19:
+elif 11 <= birth_place <= 19:
     print("Te olite sündinud Kuressaare Tartu Ülikooli Naistekliinikus, Tartumaa, Tartu")
-elif 21 <= b_place <= 220:
+elif 21 <= birth_place <= 220:
     print("Te olite sündinud Ida-Tallinna Keskhaiglas või Pelgulinna sünnitusmajas või Hiiumaal või Keilas või Rapla haiglas või Loksa haiglas")
-elif 221 <= b_place <= 270:
+elif 221 <= birth_place <= 270:
     print("Te olite sündinud Ida-Viru Keskhaiglas (Kohtla-Järve, endine Jõhvi)")
-elif 271 <= b_place <= 370:
+elif 271 <= birth_place <= 370:
     print("Te olite sündinud Maarjamõisa Kliinikumis (Tartu) või Jõgeva Haiglas")
-elif 371 <= b_place <= 420:
+elif 371 <= birth_place <= 420:
     print("Te olite sündinud Narva Haiglas")
-elif 421 <= b_place <= 470:
+elif 421 <= birth_place <= 470:
     print("Te olite sündinud Pärnu Haiglas")
-elif 471 <= b_place <= 490:
+elif 471 <= birth_place <= 490:
     print("Te olite sündinud Pelgulinna Sünnitusmajas (Tallinn) või Haapsalu haiglas")
-elif 491 <= b_place <= 520:
+elif 491 <= birth_place <= 520:
     print("Te olite sündinud Järvamaa Haiglas (Paide)")
-elif 521 <= b_place <= 570:
+elif 521 <= birth_place <= 570:
     print("Te olite sündinud Rakveres või Tapa haiglas")
-elif 571 <= b_place <= 600:
+elif 571 <= birth_place <= 600:
     print("Te olite sündinud Valga Haiglas")
-elif 601 <= b_place <= 650:
+elif 601 <= birth_place <= 650:
     print("Te olite sündinud Viljandi Haiglas")
-elif 651 <= b_place <= 700:
-    print("Te olite sündinud Lõuna-Eesti Haiglas (Võru) või Põlva Haiglas")
+elif 651 <= birth_place <= 700:
+                print("Te olite sündinud Lõuna-Eesti Haiglas (Võru) või Põlva Haiglas")
 
 
 
 #Print results of code analysis
 
-print('Sinu isikukood on: ', str(id_int))
-print('Te olete sündinud: ' + by + by_id + '.' + bm_id + '.' + bd_id )
+print('Te olete sündinud: ' + by + birth_year + '.' + birth_month + '.' + birth_day)
 print('Sugu ' + sex)
