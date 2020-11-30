@@ -11,6 +11,18 @@ while True:
     except:
         print('Palun sisetage ainult nubrid.')
 
+# last digit control check
+
+check_scale_1 = [1,2,3,4,5,6,7,8,9,1]
+
+check_scale_2 = [3,4,5,6,7,8,9,1,2,3]
+
+# x = id_input()                              # ID user input (string!)
+# y = id_int[10]                              # last digit in ID
+# while True (x[0] * 1) + (x[1] * 2) + (x[3] * 3) + (x[4] * 4) + (x[5] * 5) + (x[6] * 6) + (x[7] * 7) + (x[8] * 8) + (x[9] * 9) + (x[10] * 1) / 11 != int(id_int[11]) or
+#                     (x[0] * 3) + (x[1] * 4) + (x[3] * 5) + (x[4] * 6) + (x[5] * 7) + (x[6] * 8) + (x[7] * 9) + (x[8] * 1) + (x[9] * 2) + (x[10] * 3) / 11 != int(id_int[11]):
+
+
 sex_id = id_input[0]
 birth_year = id_input[1:3]              # YY
 birth_month = id_input[3:5]             # MM
