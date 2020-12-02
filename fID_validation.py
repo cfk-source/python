@@ -54,8 +54,9 @@ while True:
             print('Your birth date is: ',
                   str(20) + by + '.' + bm + '.' + bd + ' and you are ' + str(age) + ' full years ' + sex + '.')
         else:
+            print('Wrong century information.')
             break
-        print('Wrong century information.')
+
 
         # control character check - "DDMMYY.ZZZ"
         control_char = (float(id[0:6]) + float(id[7:10])) / 31
