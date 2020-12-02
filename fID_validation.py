@@ -4,7 +4,7 @@ import datetime
 
 while True:
     try:
-        id = input('Please enter your personal code: ')   # DDMMYYCZZZQ - 131052-308T
+        id = input('Please enter your personal code: ')  # DDMMYYCZZZQ - 131052-308T
 
         # birth date numeric check
         if not (id[0:6].isnumeric()):
@@ -14,15 +14,16 @@ while True:
         # length check
         len(id) == 11
         print('Your personal ID-code is: ' + id)
+
         # birth date extraction NB!!! STRINGS
-        bd = id[0:2]    # "DD"
-        bm = id[2:4]    # "MM"
-        by = id[4:6]    # "YY"
-        c = id[6]       # "C" century sign: ("-" 1900-1999),("+" 1800-1899),("A" 2000-2099)
-        z = id[7:10]    # "ZZZ" Individual number
-        q = id[10]      # "Q" Control char.checksum
+        bd = id[0:2]  # "DD"
+        bm = id[2:4]  # "MM"
+        by = id[4:6]  # "YY"
+        c = id[6]  # "C" century sign: ("-" 1900-1999),("+" 1800-1899),("A" 2000-2099)
+        z = id[7:10]  # "ZZZ" Individual number
+        q = id[10]  # "Q" Control char.checksum
         b_day = str(bd) + '.' + str(bm) + '.19' + str(by)
-        b_day_formated = datetime.datetime.strptime(b_day, '%d.%m.%Y')              # birth date human_readable
+        b_day_formated = datetime.datetime.strptime(b_day, '%d.%m.%Y')  # birth date human_readable
         today = datetime.date.today()
         age = today.year - b_day_formated.year - (
                 (today.month, today.day) < (b_day_formated.month, b_day_formated.day))
@@ -42,33 +43,27 @@ while True:
 
         # birth date check & output according to 'C'entury information
         if c == '+':
-            print('Your birth date is: ', str(18) + by + '.' + bm + '.' + bd + ' and you are ' + str(age) + ' full years ' + sex + '.')
+            print('Your birth date is: ',
+                  str(18) + by + '.' + bm + '.' + bd + ' and you are ' + str(age) + ' full years ' + sex + '.')
 
         elif c == '-':
-            print('Your birth date is: ', str(19) + by + '.' + bm + '.' + bd + ' and you are ' + str(age) + ' full years ' + sex + '.')
+            print('Your birth date is: ',
+                  str(19) + by + '.' + bm + '.' + bd + ' and you are ' + str(age) + ' full years ' + sex + '.')
 
         elif c == 'A':
-            print('Your birth date is: ', str(20) + by + '.' + bm + '.' + bd + ' and you are ' + str(age) + ' full years ' + sex + '.')
+            print('Your birth date is: ',
+                  str(20) + by + '.' + bm + '.' + bd + ' and you are ' + str(age) + ' full years ' + sex + '.')
         else:
             break
-            print('Wrong century information.')
+        print('Wrong century information.')
 
         # control character check - "DDMMYY.ZZZ"
-        control_char = (int(id[0:10]) - int(id[6])) / 31
+        control_char = (float(id[0:6]) + float(id[7:10])) / 31
+        control_char_f = (round(control_char) - int(control_char)) * 31
+        last_control_char = id[10]
+        control_str = '0123456789ABCDEFHJKLMNPRSTUVWXY'
 
-
-
-
-
-
-
-
-
-
-
-
-
+        if last_control_char != control_str[control_char_f]:
+            break
     except ValueError:
-        print()
-
-
+        print('Validation failed! Please try again.')
