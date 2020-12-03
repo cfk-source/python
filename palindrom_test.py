@@ -1,6 +1,6 @@
-word = list(input())
-print(word)
-if word == word.reverse():
-    print('Entered word is palindrome')
+word = input()
+palindrome = word[::-1]
+if palindrome == word:
+    print('Is palindrome')
 else:
-    print('Entered word is not palindrome')
+    print('Not palindrome')
