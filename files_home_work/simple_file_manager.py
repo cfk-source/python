@@ -1,5 +1,7 @@
 
 # выбрать действие от 1 до 3.
+from typing import TextIO
+
 action = int(input('Please choose action:\n '))
 if action == 3:                                         # выход из программы при выборе 3
     print('Have a nice day.')
@@ -8,7 +10,7 @@ if action == 3:                                         # выход из про
 elif action == 1:                                       # подсчёт ко-ва слов втексте, ко-ва уникальных слов в тексте
     f_name = str(input('enter file name:\n '))
     with open(f_name, 'r', encoding='UTF8') as r_file:
-        file_content = r_file.read().lower()              # содержимое файла в нижнем регистре
+        file_content = r_file.read().lower()            # содержимое файла в нижнем регистре
         words = file_content.split(' ')                 # слова разделённые пробелом
         words_count = len(words)                        # ко-во слов в файле
         unique_words = set(words)                       # уникальные слова
@@ -18,10 +20,11 @@ elif action == 1:                                       # подсчёт ко-в
 
         with open('text_Copy.txt', 'w+', encoding='UTF8') as n_file:
 
-            unique_words = n_file.write(str(unique_words))
-            unique_words_count = n_file.write(str(unique_words_count))
-
-
+            n_file.write(str(unique_words))
+            n_file.write('\n' + str(unique_words_count))
+        n_file.close()
+    r_file.close()
+    print('Results in file: ' + n_file.name)
 
 elif action == 2:
     print()
