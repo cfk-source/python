@@ -13,9 +13,13 @@ elif action == 1:                                       # подсчёт ко-в
         words_count = len(words)                        # ко-во слов в файле
         unique_words = set(words)                       # уникальные слова
         unique_words_count = len(unique_words)          # ко-во уникальных слов
-        with open('text_Copy.txt', 'w', encoding='UTF8') as n_file:
-            words_count = len(words)
-            words_count = n_file.write(file_content)
+        print(unique_words)
+        print(unique_words_count)
+
+        with open('text_Copy.txt', 'w+', encoding='UTF8') as n_file:
+
+            unique_words = n_file.write(str(unique_words))
+            unique_words_count = n_file.write(str(unique_words_count))
 
 
 
