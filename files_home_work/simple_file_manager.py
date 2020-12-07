@@ -1,4 +1,4 @@
-
+import glob
 # выбрать действие от 1 до 3.
 from typing import TextIO
 
@@ -20,13 +20,26 @@ elif action == 1:                                       # подсчёт ко-в
 
         with open('text_Copy.txt', 'w+', encoding='UTF8') as n_file:
 
-            n_file.write(str(unique_words))
+            n_file.write(str(list(unique_words)))
             n_file.write('\n' + str(unique_words_count))
         n_file.close()
     r_file.close()
     print('Results in file: ' + n_file.name)
+    exit()
 
 elif action == 2:
+    path = 'files_home_work'
+    files = glob.glob(path)
+    for file in files:
+        f = open(file, 'r', encoding='UTF8')
+        f.readlines()
+        f.content = f.read().lower()
+        f.words = f.content.split(' ')
+
+        print(f.words)
+
+
+        f.close()
     print()
 
 
