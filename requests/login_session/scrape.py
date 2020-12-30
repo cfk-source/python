@@ -1,11 +1,15 @@
 import requests
 from bs4 import BeautifulSoup as BS, BeautifulSoup
 
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'
+}
+
 soup = BeautifulSoup()
 
 data = {'csrf': 'DMzC8wcInE3fMYuQ0A6QdQ==',
-        'nick': '',
-        'passwd': ''}
+        'nick': 'cfk',
+        'passwd': '44914495'}
 
 cookies = {'CSRF_TOKEN': 'DMzC8wcInE3fMYuQ0A6QdQ==',
            '__utma': '75309071.1655505578.1608729783.1608729783.1608729783.1',
